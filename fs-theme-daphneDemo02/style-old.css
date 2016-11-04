@@ -1,0 +1,924 @@
+/*logo*/
+#fs-frame-banner{
+	/* top:20px; */
+}
+.fs-banner-logo {
+	position: relative;
+
+	width: auto;
+	height: 30px;
+	margin: 0 auto;
+	display: block;
+}
+
+.fs-banner-title {
+	line-height: 30px;
+	display: block;
+	margin: o auto;
+	font-size:16px;
+	max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*一级右侧菜单*/
+
+#fs-frame-navi i {
+    font-size: 22px;
+    padding: 0 1px;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+        margin-top: 17px;
+
+}
+/*收藏夹移除的icon*/
+
+#fs-frame-navi i.icon-remove-favorite{ 
+	margin-top: 2px;
+}
+
+.fs-navibar-item  .icon-navi-message{ 
+	height: 22px;
+	width: 22px;
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-navi-message.png) center no-repeat;
+    background-size: 22px 22px;
+    background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+
+
+.fs-navibar-item  .icon-navi-admin{ 
+	height: 22px;
+	width: 22px;
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-navi-admin.png) center no-repeat;
+     background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.fs-navibar-item  .icon-navi-favorite{ 
+	height: 22px;
+	width: 22px;
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-navi-favorite.png) center no-repeat;
+    background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+ .fs-navibar-item.fui-seb .icon-navi-message{ 
+	height: 22px;
+	width: 22px;
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-navi-message-active.png) no-repeat center!important;
+    background-size: 22px 22px;
+     background-size: contain!important;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+ .fs-navibar-item.fui-seb .icon-navi-admin, #fs-frame-navi li.fui-bsc .icon-nav-admin{ 
+	height: 22px;
+	width: 22px;
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-navi-admin-active.png) no-repeat center!important;
+    background-size: 22px 22px;
+     background-size: contain!important;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.fs-navibar-item.fui-seb .icon-navi-favorite{ 
+	height: 22px;
+	width: 22px;
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-navi-favorite-active.png) no-repeat center!important; 
+    background-size: 22px 22px;
+     background-size: contain!important;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+i.icon-navi-message:before, i.icon-navi-admin:before, i.icon-navi-favorite:before{ 
+
+	content: '';
+}
+
+#fs-navi-message i{ 
+	/* margin-left: 13px; */
+}
+
+#fs-navi-admin i{ 
+	/* margin-left: 20px; */
+}
+
+#fs-navi-admin  span{ 
+	display: inline-block;
+	height: 24px;
+	line-height:24px;
+	position: relative;
+	padding: 0 0 0 5px;
+	background:transparent;
+	top:3px;
+     /*   width: 60px; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+
+}
+
+/*一级菜单*/
+.menu_item_icon{ 
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	margin: 5px 8px -5px 0;
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-01.png) center no-repeat;
+    background-size: 22px 22px;
+    background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.node-navi-li:hover .menu_item_icon, .node-navi-li.activeLi .menu_item_icon{
+	 width: 22px;
+	height: 22px;
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-01-active.png) center no-repeat;
+    background-size: 22px 22px;
+    background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+
+}
+.menu_icon_0{ 
+	width: 22px;
+	height: 22px;
+	/*background: url(${servletURL}?op=resource&resource=/com/fr/plugin/images/icon-01.png);*/
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-01.png) center no-repeat;
+    background-size: 22px 22px;
+ 	 background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.menu_icon_1{ 
+		width: 22px;
+	height: 22px;
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-02.png) center no-repeat;
+	background-size: 22px 22px;
+	  background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+.menu_icon_2{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-03.png);
+	background-size: 22px 22px;
+ 	background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);}
+
+.menu_icon_3{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-04.png);
+	background-size: 22px 22px;
+	 background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.menu_icon_4{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-05.png);
+	background-size: 22px 22px;
+	 background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.menu_icon_5{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-06.png);
+	background-size: 22px 22px;
+	 background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.menu_icon_6{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-07.png);
+	background-size: 22px 22px;
+	 background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.menu_icon_7{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-08.png);
+	background-size: 22px 22px;
+	 background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+
+/*hover, 选中*/
+.node-navi-li:hover  .menu_icon_0, .node-navi-li.activeLi .menu_icon_0{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-01-active.png) no-repeat center!important;
+	background-size: 22px 22px;
+	  background-size: contain!important;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.node-navi-li:hover .menu_icon_1, .node-navi-li.activeLi .menu_icon_1{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-02-active.png) no-repeat center!important;
+	background-size: 22px 22px;
+	  background-size: contain!important;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+.node-navi-li:hover .menu_icon_2, .node-navi-li.activeLi .menu_icon_2{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-03-active.png) no-repeat center!important;
+	background-size: 22px 22px;
+		 background-size: contain!important;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.node-navi-li:hover .menu_icon_3, .node-navi-li.activeLi .menu_icon_3{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-04-active.png) no-repeat center!important;
+	background-size: 22px 22px;
+	 background-size: contain!important;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.node-navi-li:hover .menu_icon_4, .node-navi-li.activeLi .menu_icon_4{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-05-active.png) no-repeat center!important;
+	background-size: 22px 22px;
+	 background-size: contain!important;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.node-navi-li:hover .menu_icon_5, .node-navi-li.activeLi .menu_icon_5{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-06-active.png) no-repeat center!important;
+	background-size: 22px 22px;
+	 background-size: contain!important;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.node-navi-li:hover .menu_icon_6, .node-navi-li.activeLi .menu_icon_6{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-07-active.png) no-repeat center!important;
+	background-size: 22px 22px;
+	 background-size: contain!important;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+.node-navi-li:hover .menu_icon_7, .node-navi-li.activeLi .menu_icon_7{ 
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-08-active.png) no-repeat center!important;
+	background-size: 22px 22px;
+ 	background-size: contain!important;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+/*右侧菜单*/
+#fs-frame-navi{
+	right:96px;
+	height: 50px;
+}
+
+#fs-frame-search {
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	position: relative;
+	float: right;
+	right: 120px;
+	top: 14px;
+	color: #ffffff;
+	background-color: transparent;
+	/* padding: 0 8px; */
+	line-height: 24px;
+	font-size: 10px;
+	border:1px solid rgb(255,255,255);
+	border: 1px solid rgba(255,255,255,0.6);
+
+	height: 24px;
+    padding-left: 12px;
+	-webkit-appearance: none;
+
+	 transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+
+	behavior:url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/PIE.htc);
+}
+
+#fs-frame-search i{
+	position: absolute;
+	right:15px;
+	top:2px;
+	height: 20px;
+	width: 20px;
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-02.png);
+	background-size: 20px 20px;
+	 background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+i.icon-navi-search:before{ 
+	content: '';
+}
+
+#fs-frame-search i:hover{ 
+	position: absolute;
+	right:15px;
+	top:2px;
+	height: 20px;
+	width: 20px;
+	background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-02-active.png);
+	background-size: 20px 20px;
+	 background-size: contain;
+    -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+     behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+}
+
+#fs-frame-search input{ 
+	 color: #ffffff;
+    height: 18px;
+    -webkit-border-radius: 0 
+    -moz-border-radius: 0;
+     border-radius: 0; 
+    text-indent: 10px;
+    margin: 3px 0;
+    box-sizing: border-box;
+  /*   transition:width 1s ease-in, height 1s ease-in; */
+ 
+ /*    border-left: 1px solid rgba(255,255,255,0.6); */
+}
+
+/*获取焦点时search框的大小的式样*/
+#fs-frame-search.focus{ 
+	background-color: transparent;
+	color: #ffffff;
+	 transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    -o-transform: scale(1.15);
+    line-height: 32px; 
+	/* width: 197px; 
+	 	height: 32px;
+	line-height: 32px; 
+	animation:changebig 0.4s 1;*/
+}
+
+
+@keyframes changebig{ 
+
+	0%{width:170px;height: 24px;}
+	40%{width: 180px;height: 27px;}
+	80%{width: 190px;height: 30px;}
+	100%{width: 197px; height: 32px;}
+
+}
+
+/* #fs-frame-search.focus i{ 
+	top:6px;
+}
+
+#fs-frame-search.focus input{ 
+	margin-top: 7px;
+} */
+
+
+.fs-admin-combo, .fs-message-combo, .fs-favorite-combo{ 
+	top:50px;
+	font-size: 12px;
+	box-shadow:none;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #9da6a8;  
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #9da6a8;
+}
+
+input:-ms-input-placeholder{
+    color: #9da6a8;
+}
+
+input::-webkit-input-placeholder {
+    color: #9da6a8;
+}
+
+
+#fs-frame-reg {
+	position: absolute;
+	float: right;
+	right: 20px;
+	color: #fff;
+	line-height: 55px;
+	cursor: pointer;
+	width: 76px;
+	text-align: center;
+    font-size: 12px;
+}
+
+.fs-navibar-item{ 
+	height: 50px;
+	line-height: 50px;
+	margin-top: 0;
+	text-align: center;
+}
+
+#fs-frame-navi li:before{ 
+	display:block;
+	 content:"" ;
+	  width:1px; 
+	  height:24px;
+	  top:15px; 
+	  left:0;
+	 position:absolute;
+	 background-color: rgb(30,100,125);
+}
+
+#fs-frame-navi li.fui-bsc:before{ 
+	width: 0;
+
+}
+
+#fs-frame-reg:before{ 
+	display:block;
+	 content:"" ;
+	  width:1px; 
+	  height:24px;
+	  top:15px; 
+	  left:0;
+	 position:absolute;
+	 background-color: rgb(30,100,125);
+
+}
+
+
+#fs-navi-favorite{ 
+	/* width: 62px; */
+	padding: 0 16px;
+	text-align: center;
+}
+
+#fs-navi-admin{ 
+/*   width: 117px; */
+  padding: 0 16px;
+  white-space: nowrap;
+  text-align: left;
+
+}
+
+#fs-navi-message{ 
+	/* width: 67px; */
+	    padding: 0 2px 0 16px;
+
+}
+.node-navi{
+	position: absolute;
+	float: left;
+	list-style: none;
+	height: 50px;
+	top: 50px
+}
+
+
+.node-navi .activeLi{ 
+	color:#00eaff;
+}
+
+.menu_item_more{ 
+	color:#0ca1c9;
+}
+
+.node-navi li{
+	position: relative;
+	float: left;
+	left: 0;
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	font-size: 16px;
+	padding: 0;
+	cursor: pointer;
+	width: 130px;
+	text-align: center;
+}
+
+.node-navi li.special-more-li{ 
+	width: 60px;
+	max-width: 70px;
+}
+
+.node-navi li:hover{
+	color: #00eaff;
+}
+
+.node-navi li>:first-child{ 
+  height: 42px;
+}
+.node-navi li:hover .node-select{ 
+	border-bottom: 3px solid #00eaff; 
+}
+
+.node-navi .title-level1{ 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent; 
+   /*  padding: 0 5px 0 0; */
+}
+
+.node-pane{
+	position: absolute;
+	top: 47px;
+	left: 0;
+	height: 238px;
+	width: auto;
+	-webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	z-Index: 10000;
+	overflow-x: auto;
+   	overflow-y: hidden;
+}
+.node-pane-inner{
+	position: relative;
+	_height: 238px;
+	height: 238px;
+	
+	/*overflow-x: auto;
+	overflow-y: auto;*/
+	background: #01addf;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+	*width:200px;
+	/* padding:0px 0 10px; */
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow-y: hidden;
+}
+
+.node-wrapper{ 
+	width: 180px;
+	text-align: center;
+	display: inline-block;
+	float: left;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	
+}
+
+
+.haschildnode{ 
+	/* border-right: 1px solid #20c2f3; */
+}
+
+/*.haschildnode:last-child,*/
+ .node-pane-inner .last-childnode{ 
+	border-right:0;
+}
+
+
+
+
+.node-pane a, .node-title{
+	position: relative;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: block;
+	min-width: 180px;
+	_width:180px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	color: white;
+	padding: 0 5px;
+	cursor: pointer;
+	/* border-left: 3px solid transparent; */
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+
+
+.node-pane a{ 
+	height: 28px;
+	line-height: 28px;
+}
+
+.node-pane a:hover{
+	background: #006786;
+	text-decoration: underline;
+	/* border-left: 3px solid rgb(218,229,69); */
+}
+.node-title{
+	 cursor: default;
+    color: #fff;
+    font-weight: normal;
+    background: #017597;
+   /* margin-bottom: 15px;*/
+    padding: 0;
+}
+
+/*add 10-19*/
+.node-pane-inner .last-childnode .node-title-inner{ 
+
+border-right: 0;
+}
+.node-title-inner{ 
+	height: 25px;
+    margin-top: 9px;
+    line-height: 25px;
+    border-right: 1px solid #fff;
+}
+
+.node-wrapper .third-title{ 
+	margin-top: 15px;
+    margin-bottom: 15px;
+    border-right: 1px solid #fff;
+}
+
+.haschildnode  .third-title{ 
+	height: 168px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-right: 1px solid #fff;
+
+}
+
+#fs-frame-menu{ 
+float: right;
+right: -230px;
+position: absolute;
+z-index: 200;
+background-color: #01addf;
+opacity: 0.94;
+
+}
+
+.fs-style-pure #fs-frame-menu{ 
+background-color: #01addf;
+}
+
+#fs-frame-content{ 
+	left: 0;
+}
+
+/*滚动条*/
+
+/*
+.node-pane-inner::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #0091bb;
+}
+
+.node-pane-inner::-webkit-scrollbar
+{
+	width: 9px;
+	background-color: #0091bb;
+}
+
+.node-pane-inner::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #fff;
+}
+*/
+
+/*子菜单*/
+.fui-seb{
+	color:#00eaff;
+	background-color:transparent;
+}
+
+.fs-tab.bravo .fs-tab-homepage.select, .fs-tab.bravo .fs-tab-item.select{
+	background-color: #f2f1f1 !important;
+}
+
+
+#fs-navi-message .fs-navi-msgnum {
+	font-family: verdana, tahoma, sans-serif;
+	background-color: #bd5200;
+	padding: 1px 3px 0 3px;
+	 border: 0;
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	font-size: 9px;
+	position: relative;
+	left: -12px;
+	top: -12px;
+	behavior:url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/PIE.htc);
+}
+
+
+.fui-bsc{
+  color:#00eaff !important;
+}
+.fui-bsd{
+  border-color: rgb(0,0,0) !important;
+}
+.fui-fhc{
+	color: rgb(255,255,255) !important;
+}
+.fui-fht{
+	text-shadow: 0px 0px 3px rgb(255,255,255) !important;
+}
+
+.fui-fbc{
+  color: white !important;
+}
+.fui-fbt{
+  text-shadow: white !important;
+}
+
+/*消息右上角图标*/
+
+#fs-navi-message .fui-bsc{ 
+	color:#ffffff !important;
+
+}
+
+
+.fs_sysmsg_combo_text{ 
+	    color: #000;
+	    line-height: 16px;
+	    padding-top: -2px;
+}
+
+div.fs_sysmsg_combo_more div{ 
+ 		color: #000;
+	    line-height: 16px;
+}
+
+body{
+	background: #005169;
+}
+/*背景main*/
+.fs-tab .fs-tab-content{
+	background:#f2f1f1;
+	top:40px;
+}
+
+
+
+/*右侧菜单*/
+.fs-menu-icon{ 
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+
+ }
+.fs-menutree  .fui-seb{ 
+	background:rgb(0,102,135);
+	color:#fff;
+
+}
+
+.fs-menutree .menutree-child {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    background-color: #198db0;
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
+    }
+    .fs-menutree .menutree-child:last-child{ 
+		padding-bottom: 2px;
+		
+    }
+
+   .fs-menutree .menutree-child:hover {
+    background: #006786;
+    border-left: 3px solid rgb(218,229,69);
+    box-sizing:border-box;
+	}
+
+
+	.fs-menutree  .menutree-node:after{ 
+
+	  display:block;
+	   content:"" ;
+	   width:20px!important; 
+	   height:20px!important;
+	   top:10px; 
+	  right:20px;
+	   position:absolute;
+	   background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-more-left.png)!important;
+	   /*background: none\9!important*/;
+	   background-size: 20px 20px; 
+	    background-size: contain!important;
+        -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+        behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/backgroundsize.min.htc);
+	}
+
+	.fs-menutree  .menutree-node.fui-seb:after{ 
+	   position:absolute;
+	   background: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/images/icon-more.png)!important;
+	   /*background: none\9!important;*/
+	   background-size: 20px 20px;
+	    background-size: contain!important;
+       -ms-behavior: url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/PIE.htc);
+       behavior:url(/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/PIE.htc);
+	}
+
+	.fs-menutree .menutree-child:after, .fs-menutree .menutree-child.fui-seb:after{ 
+		background: none!important;
+	}
+
+
+	/*tab右侧*/
+	.fs-tab .fs-tab-item-label{text-align: center;}
+	.fs-tab-item {
+	    color: #314053;
+	    background-color: #f8f7f7;
+	    opacity: 0.7;
+	     filter: alpha(opacity=70);
+	}
+	.fs-tab-homepage.select, .fs-tab.bravo .fs-tab-item.select{opacity: 1; filter: alpha(opacity=100);color:#01ADDF;}
+	.icon-tab-menu{color:#fff;}
+	.fs-tab .fs-tab-names{height:40px;}
+	.fs-tab .fs-tab-item, .fs-tab .fs-tab-homepage{height: 40px;line-height: 40px;}
+
+	/*调整二级菜单*/
+	.second-wapper{ 
+		background: #017597;
+		position: relative;
+		height: 40px;
+	 }
+
+	 .second-inner{ 
+	 	width: 100%;
+	 	height: 40px;
+	 /*	padding: 0 10px;*/
+	  }
+
+	 .third-wrapper{ 
+	 	position: relative;
+	 	height: 168px;
+	 	padding: 15px 0;
+	 	
+	  }
+	  .third-inner{ 
+	  	position: relative;
+	  	height: 100%;
+		overflow-x: hidden;
+   		overflow-y: auto;
+	   }
+
+	  .third-title{ 
+	  	position: relative;
+	  	width: 180px;
+	  	height: 100%;
+	    text-align: center;
+	    display: inline-block;
+	    float: left;
+	    box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    -webkit-box-sizing: border-box;
+	   }
+	   .third-inner .third-title:before{ 
+	   	   display:block;
+		   content:"" ;
+		   width:1px; 
+		   height:168px;
+		   top:0; 
+		   left:0;
+		   background: #fff;
+		   position:absolute;
+
+	    }
+	
+	     .third-inner .third-title.first-third:before{width: 0;}
+
+	/*右侧菜单*/
+	.fs-menu-item{ 
+		height: 40px;
+		line-height: 40px;
+	}
+	@media screen and (max-width: 1285px){ 
+
+
+	}
