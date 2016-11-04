@@ -328,7 +328,7 @@
                         //判断是否有二级及三级菜单
                         if (0 != $(this).find(".node-pane .second-inner").children().length) {
                             $('.node-pane', this).slideDown(200, function(e) {
-                            	
+                            	$(this).getNiceScroll().remove();
                                 $(this).niceScroll({
                                     cursorcolor: "#ffffff",
                                     cursoropacitymax: 1,
@@ -342,7 +342,7 @@
                                     horizrailenabled: true
                                 });
                               
-	                            //$(this).niceScroll().updateScrollBar();
+	                            $('.node-pane', this).getNiceScroll().show();
 
                             });
                             $(this).children('div:first').addClass("node-select");
@@ -356,6 +356,7 @@
                 mouseleave: function() {
                     $('.node-pane', this).slideUp(200);
                     $(this).children('div:first').removeClass("node-select");
+                    $('.node-pane', this).getNiceScroll().hide();
                    // console.log("rmove");
                     //$('.node-pane', this).remove();
                   	/*try{
