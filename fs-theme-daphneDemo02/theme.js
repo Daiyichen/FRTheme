@@ -140,7 +140,8 @@
                             var $second_wrapper = $('<div class="second-wapper"></div>').appendTo($pane);
                             var $second_inner = $('<div class="second-inner"></div>').appendTo($second_wrapper);
                             var $third_wrapper = $('<div class="third-wrapper"></div>').appendTo($pane);
-                            var $thirde_inner = $('<div class="third-inner"></div>').appendTo($third_wrapper);
+                            var $third_outer = $('<div class="third-outer"></div>').appendTo($third_wrapper);
+                            var $thirde_inner = $('<div class="third-inner"></div>').appendTo($third_outer);
                             var $thirdpane = null;
                             if (root.hasChildren && root.ChildNodes) {
 
@@ -463,17 +464,21 @@
         /*$(".node-pane-inner").slimScroll({ 
         	 color: 'red'
         });*/
-        //纵向滚动条
-        $(".third-inner").niceScroll({
-            cursorcolor: "#ffffff",
-            cursoropacitymax: 1,
-            touchbehavior: false,
-            cursorwidth: "10px",
-            cursorborder: "0",
-            cursorborderradius: "5px",
-            background: "#0091bb",
-            horizrailenabled: false
-        });
+		//纵向滚动条
+		$(".third-wrapper .third-outer").each(function(e){ 
+ 			//nicescroll设置外层容器及内容容器，否则scroll添加的div偏外层， 有横向滚动条后，再移动纵向滚动条，纵向滚动条位置不对
+	        $(this).niceScroll(".third-inner",{
+	            cursorcolor: "#ffffff",
+	            cursoropacitymax: 1,
+	            touchbehavior: false,
+	            cursorwidth: "10px",
+	            cursorborder: "0",
+	            cursorborderradius: "5px",
+	            background: "#0091bb",
+	            horizrailenabled: false
+	        });
+
+		});
 
     };
 
@@ -586,7 +591,8 @@
             var $second_wrapper = $('<div class="second-wapper"></div>').appendTo($pane);
             var $second_inner = $('<div class="second-inner"></div>').appendTo($second_wrapper);
             var $third_wrapper = $('<div class="third-wrapper"></div>').appendTo($pane);
-            var $thirde_inner = $('<div class="third-inner"></div>').appendTo($third_wrapper);
+             var $third_outer = $('<div class="third-outer"></div>').appendTo($third_wrapper);
+              var $thirde_inner = $('<div class="third-inner"></div>').appendTo($third_outer);
             var $thirdpane = null;
             if (root.hasChildren && root.ChildNodes) {
 
