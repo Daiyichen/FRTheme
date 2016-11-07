@@ -1,7 +1,10 @@
 @font-face {
     font-family: 'icomoon';
     src: url('/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/fonts/icomoon.eot');
-    src: url('/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/fonts/icomoon.eot?#iefix') format('embedded-opentype'), url('/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/fonts/icomoon.ttf') format('truetype'), url('/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/fonts/icomoon.woff') format('woff'), url('/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/fonts/icomoon.svg?#icomoon') format('svg');
+    src: url('/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/fonts/icomoon.eot?#iefix') format('embedded-opentype'), 
+    url('/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/fonts/icomoon.ttf') format('truetype'), 
+    url('/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/fonts/icomoon.woff') format('woff'), 
+    url('/WebReport/ReportServer?op=resource&resource=fstheme/fs-theme-daphneDemo02/fonts/icomoon.svg?#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -670,7 +673,7 @@ body {
 
 .fs-tab .fs-tab-content {
     background: #f2f1f1;
-    top: 40px;
+    /* top: 40px; */
 }
 
 
@@ -761,13 +764,13 @@ body {
 }
 
 .fs-tab .fs-tab-names {
-    height: 40px;
+  /*   height: 40px; */
 }
 
 .fs-tab .fs-tab-item,
 .fs-tab .fs-tab-homepage {
-    height: 40px;
-    line-height: 40px;
+   /*  height: 40px;
+   line-height: 40px; */
 }
 
 
@@ -828,12 +831,12 @@ body {
 
 /*右侧菜单*/
 
-.fs-tab .fs-tab-btns{height: 40px;}
+.fs-tab .fs-tab-btns{/* height: 40px; */}
 
 .fs-menu-item {
     height: 40px;
     line-height: 40px;
 }
-.fs-tab .fs-tab-more{height: 40px;line-height: 40px;}
+.fs-tab .fs-tab-more{/*  height: 40px;line-height: 40px; */}
 
 @media screen and (max-width: 1285px) {}

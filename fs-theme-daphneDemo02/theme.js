@@ -200,7 +200,7 @@
         },
 
         config4tabPane: {
-          tabHeight:40   //修改参数tab的高度，默认是30，否则计算fs-tab-content的高度会多10px
+          //tabHeight:40   //修改参数tab的高度，默认是30，否则计算fs-tab-content的高度会多10px
         },
         config4MenuTree: {
             onNodeCreate: function(node, $node, $li) {
@@ -317,7 +317,7 @@
                         if (wH < node_pane_w) {
                             $(this).find(".node-pane").width(wH - 20);
                             //$(this).find(".node-pane").css("left", "-160px");
-                            $(this).find(".node-pane").css("left", 0);
+                            $(this).find(".node-pane").css("left", -li_Left);
                         } else if (wH - li_Left < node_pane_w) {
                             //二级菜单展开的宽度大于剩余的宽度，向左移动
                             $(this).find(".node-pane").css("left", -(node_pane_w - (wH - li_Left)) + "px");
@@ -564,13 +564,15 @@
             var $node = null
             if (index < len) {
                 $node = $('<li class="node-navi-li"/>').appendTo($ul);
-                var innerHtml = "<div class='line'></div><div  class='title-level1' title=" + root.text + "><span class='menu_item_icon menu_icon_" + index + "'></span>" + root.text + "</div>";
+                var innerHtml = "<div  class='title-level1' title=" + root.text + "><span class='menu_item_icon menu_icon_" + index + "'></span>" + root.text + "</div>";
                 $(innerHtml).appendTo($node);
+                 $('<div class="line">').appendTo($node);
 
             } else if (index == len) {
                 $node = $('<li class="node-navi-li special-more-li"/>').appendTo($ul);
-                innerHtml = "<div class='line'></div><div class='title-level1' title=" + root.text + "><span class='menu_item_more'>●●●</span></div>";
+                innerHtml = "<div class='title-level1' title=" + root.text + "><span class='menu_item_more'>●●●</span></div>";
                 $(innerHtml).appendTo($node);
+                 $('<div class="line">').appendTo($node);
                 $("#fs-frame-menu").width(228);
                 var $rightMenu = $('<div class="fs-menutree"></div>').appendTo($('#fs-frame-menu'));
                 $ulParent = $('<ul/>').appendTo($rightMenu);
