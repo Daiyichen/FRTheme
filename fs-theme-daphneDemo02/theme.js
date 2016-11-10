@@ -1,5 +1,6 @@
 (function($) {
-    FR.$defaultImport('/fstheme/fs-theme-daphneDemo02/jquery.nicescroll.min.js', 'js'); //引入自定义滚动条
+    FR.$defaultImport('/fstheme/fs-theme-daphneDemo02/jquery.nicescroll.min.js', 'js'); //引入横向自定义滚动条
+    FR.$defaultImport('/fstheme/fs-theme-daphneDemo02/jquery.slimscroll.min.js', 'js'); //引入纵向滚动条
     var moreIndex = 0;
     var iIndex = 0;
     var g_nodes = null;
@@ -136,6 +137,7 @@
 
                             //鼠标滑过，显示下拉菜单
                             $dropdown = $('<div class="node-pane" style="display:none;"/>').appendTo($node);
+                            //var $pane_outer = $('<div class="pane-outer"></div>').appendTo($dropdown);
                             var $pane = $('<div class="node-pane-inner"/>').appendTo($dropdown);
                             var $second_wrapper = $('<div class="second-wapper"></div>').appendTo($pane);
                             var $second_inner = $('<div class="second-inner"></div>').appendTo($second_wrapper);
@@ -187,7 +189,6 @@
                         _redrawNodeLiWH(len, allLen); //重新调整菜单的宽度，使其平均
                         _menuHover();
                         _initscroll();
-                        _bindEvts();
 
 
 
@@ -229,6 +230,8 @@
                     width: wW
                 });
 
+
+                _bindEvts(); //监听绑定右侧菜单数据
 
                 if (!!window.BI) {
                     $('<div id="bi-data-config" class=" bi-basic-button data-config-font"><i class="bi-single x-icon b-font horizon-center" style="width: 20px; height: 20px; position: relative; top: 0px; right: 4px; margin: 0px auto;"></i>数据配置</div>').insertBefore($("#fs-frame-search"));
@@ -290,7 +293,7 @@
                     if ($(this).children('div:first').hasClass("node-select")) {
 
                     } else {
-                        $(this).siblings("li").find(".node-pane").slideUp(200);
+                        $(this).siblings("li").find(".node-pane").hide();
                         $(this).siblings("li").find(".title-level1").removeClass("node-select");
                     }
                     //$('.node-pane', this).slideUp(200);	
@@ -310,62 +313,28 @@
                             right: "-228px"
                         }, 200);
 
-                        var li_Left = $(this).offset().left; //一级菜单距离左边的距离
-                        var wH = $(window).width(); //窗口的总宽度
-                        var curentW = $(this).width(); //当前菜单的宽度
-                        var node_pane_w = $(this).find(".node-pane-inner").width();
-                        //缩小浏览器窗口，处理二级菜单宽度超过屏幕款的的情况
-                        if (wH < node_pane_w) {
-                            $(this).find(".node-pane").width(wH - 20);
-                            //$(this).find(".node-pane").css("left", "-160px");
-                            $(this).find(".node-pane").css("left", -li_Left);
-                        } else if (wH - li_Left < node_pane_w) {
-                            //二级菜单展开的宽度大于剩余的宽度，向左移动
-                            $(this).find(".node-pane").css("left", -(node_pane_w - (wH - li_Left)) + "px");
 
-                        } else {
-
-                        }
-                        //判断是否有二级及三级菜单
-                        if (0 != $(this).find(".node-pane .second-inner").children().length) {
-                            $('.node-pane', this).slideDown(200, function(e) {
-                            	$(this).getNiceScroll().remove();
-                                $(this).niceScroll({
-                                    cursorcolor: "#ffffff",
-                                    cursoropacitymax: 1,
-                                    touchbehavior: false,
-                                    cursorwidth: "10px",
-                                    cursorborder: "0",
-                                    cursorborderradius: "5px",
-                                    background: "#0091bb",
-                                    autohidemode:"leave",
-                                   // railpadding: { top:0, right:'15px', left:'15px', bottom:0 },//滚动条的位置
-                                    horizrailenabled: true
-                                });
-                              
-	                            $('.node-pane', this).getNiceScroll().show();
-
-                            });
-                            $(this).children('div:first').addClass("node-select");
-                        }
-
-
+                        $('.node-pane', this).show();
 
                     }
 
-                },
-                mouseleave: function() {
-                    $('.node-pane', this).slideUp(200);
-                    $(this).children('div:first').removeClass("node-select");
-                    $('.node-pane', this).getNiceScroll().hide();
-                   // console.log("rmove");
-                    //$('.node-pane', this).remove();
-                  	/*try{
-                  		  			$('.node-pane', this).getNiceScroll().hide();
-                            	  $('.node-pane', this).getNiceScroll().remove();
+                    
+                    $(this).children('div:first').addClass("node-select");
 
-                            	 
-                            	}catch(e){console.log("dd");}*/
+
+                },
+                mouseleave: function(e) {
+
+                    // $('.node-pane', this).slideUp(200);
+                    if($(e.relatedTarget).hasClass("nicescroll-cursors") || $(e.relatedTarget).hasClass("nicescroll-rails")){ 
+                    	//因为滚动条在node-pane的外貌，所以要在移动到滚动条时，不隐藏
+                    	return;
+
+                    }else{ 
+                    	$('.node-pane', this).hide();
+                    	$(this).children('div:first').removeClass("node-select");	
+                    }
+                                     
                 },
 
                 click: function(e) {
@@ -373,13 +342,6 @@
                 }
             }),
 
-            /*
-			$(".node-pane").unbind("mouseleave").bind("mouseleave",function(e){ 
-			
-				$(this).slideUp(200);			
-				$(this).parent().find(".title-level1").removeClass("node-select");
-			});
-			*/
 
             $(this).unbind("mouseenter").unbind("mouseleave");
 
@@ -424,6 +386,10 @@
             }
         }
 
+        //重新调整一级菜单的高度后，距离左侧的宽度也应该跟着调整
+        _initHorizonScroll();
+       
+
     };
 
     //计算二级菜单可以显示的宽度
@@ -438,47 +404,158 @@
         }
         $pane.find(".haschildnode").eq(hasChildLen - 1).addClass("last-childnode");
 
-        if (len2 > 0) {
-            //有子节点
-            if (len == len2) {
 
-                $pane.width(len2 * 　180);
-                //如果每个子节点都有自己的子节点
-                //$pane.width(len2 * 　183 + 20);
-            } else if (len2 < len) {
-                //如果只有某子节点有自己的子节点，其它的没有子节点
-                $pane.width((len2 + 1) * 　180);
-            }
+        //有子节点
+        if (len == len2) {
 
-        } else {
+            $pane.width(len2 * 　180);
+            //如果每个子节点都有自己的子节点
+            //$pane.width(len2 * 　183 + 20);
+        }else if(1 == len && len2 == 0){
+        	  //处理只有二级菜单没有三级菜单的情况，将其上移，空的40px去掉 add 11/10      	
+        	$pane.find(".second-wapper").hide();
 
-            if (len > 6) {
-                $pane.width(180);
-            }
-        }
+        }else if (len2 < len) {
+            //如果只有某子节点有自己的子节点，其它的没有子节点
+            $pane.width((len2 + 1) * 　180);
 
+        }else{}
     };
 
-    //初始化滚动条
-    var _initscroll = function() {
-        /*$(".node-pane-inner").slimScroll({ 
-        	 color: 'red'
-        });*/
-		//纵向滚动条
-		$(".third-wrapper .third-outer").each(function(e){ 
- 			//nicescroll设置外层容器及内容容器，否则scroll添加的div偏外层， 有横向滚动条后，再移动纵向滚动条，纵向滚动条位置不对
-	        $(this).niceScroll(".third-inner",{
-	            cursorcolor: "#ffffff",
-	            cursoropacitymax: 1,
-	            touchbehavior: false,
-	            cursorwidth: "10px",
-	            cursorborder: "0",
-	            cursorborderradius: "5px",
-	            background: "#0091bb",
-	            horizrailenabled: false
-	        });
 
-		});
+    var _initHorizonScroll = function(){ 
+
+    	 $(".node-pane").each(function(){ 
+    	 	var bShowHoriz = false;
+        	var li_Left = $(this).parent().offset().left; //一级菜单距离左边的距离
+	        var wH = $(window).width(); //窗口的总宽度
+	        var curentW = $(this).parent().width(); //当前菜单的宽度
+	        var node_pane_w = $(this).width();
+	        //缩小浏览器窗口，处理二级菜单宽度超过屏幕款的的情况
+	        if (wH < node_pane_w) {
+	        	bShowHoriz = true;
+	            $(this).width(wH-2);
+	            $(this).css("left", -li_Left);
+	        } else if (wH - li_Left < node_pane_w) {
+	            $(this).width(node_pane_w);
+	            //二级菜单展开的宽度大于剩余的宽度，向左移动
+	            $(this).css("left", -(node_pane_w - (wH - li_Left)) + "px");
+
+	        } else {
+	            $(this).width(node_pane_w);
+	        }
+
+	         //判断是否有二级及三级菜单
+	        if (0 != $(this).find(".second-inner").children().length) {
+	            if (bShowHoriz) {
+	                $(this).niceScroll( {
+	                    cursorcolor: "#ffffff",
+	                    cursoropacitymax: 1,
+	                    touchbehavior: false,
+	                    cursorwidth: "10px",
+	                    cursorborder: "0",
+	                    cursorborderradius: "5px",
+	                    background: "#0091bb",
+	                     autohidemode: "false",
+	                   
+	                    horizrailenabled: true,
+	                    cursordragontouch: true // 使用触屏模式来实现拖拽
+	                });
+
+
+	            }
+
+
+	        }
+
+
+        });
+    }
+
+
+    //初始化横向滚动条
+   /* var _initHorizonScroll = function($pane) {
+    	if(0 != $pane.length){
+	        var bShowHoriz = false;
+	        var li_Left = $pane.parent().parent().offset().left; //一级菜单距离左边的距离
+	        var wH = $(window).width(); //窗口的总宽度
+	        var curentW = $pane.parent().parent().width(); //当前菜单的宽度
+	        var node_pane_w = $pane.parent().width();
+	        //缩小浏览器窗口，处理二级菜单宽度超过屏幕款的的情况
+	        if (wH < node_pane_w) {
+	            bShowHoriz = true;
+	            $pane.parent().width(wH-2);
+	            //$(this).find(".node-pane").css("left", "-160px");
+	            $pane.parent().css("left", -li_Left);
+	        } else if (wH - li_Left < node_pane_w) {
+	            $pane.parent().width(node_pane_w);
+	            //二级菜单展开的宽度大于剩余的宽度，向左移动
+	            $pane.parent().css("left", -(node_pane_w - (wH - li_Left)) + "px");
+
+	        } else {
+	            $pane.parent().width(node_pane_w);
+	        }
+	        //判断是否有二级及三级菜单
+	        if (0 != $pane.find(".second-inner").children().length) {
+	           // $pane.parent().css({ "transform": "translate3d(0,0,0)" }); //重置node-pane-inner的位置
+	            // $pane.parent().niceScroll( {'.node-pane-inner',{});//这种方法当只有一个横向滚动条的时候不显示
+
+
+	            //'.node-pane-inner',
+	            if (bShowHoriz) {
+	                $pane.parent().niceScroll( {
+	                    cursorcolor: "#ffffff",
+	                    cursoropacitymax: 1,
+	                    touchbehavior: false,
+	                    cursorwidth: "10px",
+	                    cursorborder: "0",
+	                    cursorborderradius: "5px",
+	                    background: "#0091bb",
+	                     autohidemode: "false",
+	                   
+	                    horizrailenabled: true,
+	                    cursordragontouch: true // 使用触屏模式来实现拖拽
+	                });
+
+
+	            }
+
+
+	        }
+
+     }   
+
+    }*/
+
+
+    //初始化纵向滚动条
+    var _initscroll = function() {
+
+        $(".third-wrapper .third-inner").each(function(e) {
+        	var vH = '168px';
+        	if("none" == $(this).parent().parent().parent().find(".second-wapper").css("display")){ 
+        		vH = '208px';
+        		$(this).parent().parent().height(208);
+        	}else{ 
+
+        	}
+           // $(this).height($(".third-title", this).height());
+
+            $(this).slimScroll({
+                // width: '200px',
+                height: vH,
+                size: '10px',
+                position: 'right',
+                alwaysVisible: true,
+                railVisible: true,
+                color: '#fff',
+                railColor: '#0091bb',
+                opacity: 1
+            });
+
+        });
+
+
 
     };
 
@@ -519,9 +596,9 @@
                     $icon.html('\ue61f');
                 }
             } else {
-                {
-                    $icon.addClass('icon-tree-leaf icon-tree-' + node.nodeicon);
-                }
+                $node.addClass("no-child");
+                $icon.addClass('icon-tree-leaf icon-tree-' + node.nodeicon);
+
             }
             $('<span class="menutree-text"/>').text(node.text).appendTo($node);
         }

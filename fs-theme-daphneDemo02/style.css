@@ -83,7 +83,7 @@
 /*一级右侧菜单*/
 
 #fs-frame-navi i {
-    font-family: 'icomoon' !important;
+   /*  font-family: 'icomoon' !important; */
     color: #fff;
     font-size: 22px;
     padding: 0 1px;
@@ -112,8 +112,8 @@
     content: "\e903";
 }
 
-#fs-frame-navi li.fui-seb i,
-#fs-frame-navi li:hover i {
+#fs-frame-navi li.fui-seb > i,
+#fs-frame-navi li:hover > i {
     color: #01ADDF;
 }
 
@@ -196,6 +196,7 @@
 }
 
 #fs-frame-search {
+	 z-index: 10000;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
@@ -249,7 +250,8 @@ i.icon-navi-search:before {
 
 
 /*获取焦点时search框的大小的式样*/
-#fs-frame-search.focus:not(.search-result-wrapper){ 
+#fs-frame-search.focus{ 
+	/* height: 27px; */
 	background-color: transparent;
 	 transform: scale(1.15);
     -webkit-transform: scale(1.15);
@@ -258,6 +260,11 @@ i.icon-navi-search:before {
     z-index: 10000; /*这里在使用了scale后，要重新设置z-index*/
 }
 
+#fs-frame-search.focus .search-result-wrapper{ 
+	top:30px;
+}
+
+/* #fs-frame-search.focus input{width: 195px;height: 21px;} */
 
 @keyframes changebig {
     0% {
@@ -332,6 +339,11 @@ input::-webkit-input-placeholder {
     text-align: center;
 }
 
+
+.fs-navibar-item>i{ 
+
+	font-family: 'icomoon' !important;
+}
 #fs-frame-navi li:before {
     display: block;
     content: "";
@@ -443,6 +455,8 @@ input::-webkit-input-placeholder {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    padding-left:2px;
+    padding-right: 2px;
    /*  border-bottom: 3px solid transparent; */
     /*  padding: 0 5px 0 0; */
 }
@@ -738,6 +752,10 @@ body {
     background: none!important;
 }
 
+/*add 11-08没有子菜单，不添加箭头*/
+.fs-menutree .menutree-node.no-child:after, .fs-menutree .menutree-node.no-child.fui-seb:after { 
+	content: "";
+}
 
 /*tab右侧*/
 
@@ -797,14 +815,16 @@ body {
 }
 .third-outer{ 
  	position: relative;
-    height: 168px;
+    height: 100%;
+    overflow: hidden;
+   /*  overflow-y: auto; */
 }
 
 .third-inner {
     position: relative;
    /*  height: 168px;  */
-    overflow-x: hidden;
-    overflow-y: auto;
+  /*   overflow-x: hidden;
+     overflow-y: auto; */
 }
 
 .third-title {
